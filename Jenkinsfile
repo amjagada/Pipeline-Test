@@ -4,13 +4,13 @@ pipeline{
 	stages{
 		stage('Build'){
 			steps{
-				sh 'mvn -f /deploy/Udemy/maven-project/pom.xml clean package'
+				sh 'mvn clean package'
 			}
 			post{
 				success{
 				echo 'Now Archive]ing...'
 				sh 'ls -ltr'
-				archiveArtifacts artifacts: '**/*.war'
+				archiveArtifacts artifacts: '**/target/*.war'
 				}
 			}
 		}
