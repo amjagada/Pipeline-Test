@@ -4,7 +4,7 @@ pipeline{
 	stages{
 		stage('Build'){
 			steps{
-				sh 'mvn clean package'
+				sh '/deploy/tools/maven/bin/mvn clean package'
 			}
 			post{
 				success{
