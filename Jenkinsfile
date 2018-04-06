@@ -10,7 +10,7 @@ pipeline{
 				success{
 				echo 'Now Archive]ing...'
 				sh 'ls -ltr'
-				archiveArtifacts artifacts: '**/target/*.war'
+				archiveArtifacts artifacts: '**/*.war'
 				}
 			}
 		}
