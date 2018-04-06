@@ -1,5 +1,5 @@
 pipeline{
-	agent any
+	agent { label '!master' }
 
 	stages{
 		stage('Build'){
@@ -9,7 +9,7 @@ pipeline{
 			post{
 				success{
 				echo 'Now Archive]ing...'
-				archiveArtifacts artifacts: '**/*.war'
+				archiveArtifacts '**/target/*.war'
 				}
 			}
 		}
